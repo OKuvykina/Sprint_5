@@ -1,8 +1,7 @@
 import pytest
 from selenium import webdriver
-from DATA import Parameters
+from data import Parameters
 from locators import Locators
-import random
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
@@ -14,6 +13,9 @@ def driver_open():
     driver.set_window_size(1521, 703)
     driver.get(Parameters.URL)
 
+    WebDriverWait(driver, 3).until(
+        expected_conditions.visibility_of_element_located(Locators.TITLE_ASSEMBLE_BURGER))
+
     yield driver
     driver.quit()
 
@@ -21,6 +23,7 @@ def driver_open():
 def authorization(driver_open):
 
     driver_open.find_element(*Locators.LOGIN_BUTTON_IN_ACCOUNT).click()
+
     WebDriverWait(driver_open, 3).until(
         expected_conditions.visibility_of_element_located(Locators.HEADER_ENTRANCE))
 
@@ -33,10 +36,3 @@ def authorization(driver_open):
 
     return driver_open
 
-@pytest.fixture #генерация уникального емейла
-def generation_email():
-
-    random_number = random.randint(100, 999)
-    email = f'kuvykina_20_{random_number}@gmail.com'
-
-    return email

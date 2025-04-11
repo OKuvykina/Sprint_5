@@ -29,6 +29,6 @@ class Locators:
     SAUCES = (By.XPATH, "//*[contains(@class,'text_type_main-default') and text()='Соусы']")
     TOPPINGS = (By.XPATH, "//*[contains(@class,'text_type_main-default') and text()='Начинки']")
 
-    ROLLS_LOGO = (By.XPATH, "//*[contains(@class,'text_type_main-medium') and text()='Булки']")
-    SAUCES_LOGO = (By.XPATH, "//*[contains(@class,'text_type_main-medium') and text()='Соусы']")
-    TOPPINGS_LOGO = (By.XPATH, "//*[contains(@class,'text_type_main-medium') and text()='Начинки']")
+    ROLLS_CURRENT = (By.XPATH, "//*[contains(@class,'tab_type_current')]/*[text()='Булки']")
+    SAUCES_CURRENT= (By.XPATH, "//*[contains(@class,'tab_type_current')]/*[text()='Соусы']")
+    TOPPINGS_CURRENT = (By.XPATH, "//*[contains(@class,'tab_type_current')]/*[text()='Начинки']")

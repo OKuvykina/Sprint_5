@@ -1,7 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from locators import Locators
-from DATA import Parameters
+from data import Parameters
 
 
 class TestLogin:

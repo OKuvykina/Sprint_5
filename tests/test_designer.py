@@ -9,17 +9,16 @@ class TestDesigner:
         driver_open.find_element(*Locators.ROLLS).click()
 
         actual_header = 'Булки'
-        fact_header = driver_open.find_element(*Locators.ROLLS_LOGO).text
+        fact_header = driver_open.find_element(*Locators.ROLLS_CURRENT).text
 
         assert actual_header == fact_header
-        driver_open.quit()
 
     def test_designer_sauces(self, driver_open):
     # переход к разделу «Соусы»
         driver_open.find_element(*Locators.SAUCES).click()
 
         actual_header = 'Соусы'
-        fact_header = driver_open.find_element(*Locators.SAUCES_LOGO).text
+        fact_header = driver_open.find_element(*Locators.SAUCES_CURRENT).text
 
         assert actual_header == fact_header
         driver_open.quit()
@@ -29,7 +28,7 @@ class TestDesigner:
         driver_open.find_element(*Locators.TOPPINGS).click()
 
         actual_header = 'Начинки'
-        fact_header = driver_open.find_element(*Locators.TOPPINGS_LOGO).text
+        fact_header = driver_open.find_element(*Locators.TOPPINGS_CURRENT).text
 
         assert actual_header == fact_header
         driver_open.quit()
