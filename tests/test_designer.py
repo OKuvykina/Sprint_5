@@ -21,7 +21,6 @@ class TestDesigner:
         fact_header = driver_open.find_element(*Locators.SAUCES_CURRENT).text
 
         assert actual_header == fact_header
-        driver_open.quit()
 
     def test_designer_toppings(self, driver_open):
     # переход к разделу «Начинки»
@@ -31,4 +30,3 @@ class TestDesigner:
         fact_header = driver_open.find_element(*Locators.TOPPINGS_CURRENT).text
 
         assert actual_header == fact_header
-        driver_open.quit()
